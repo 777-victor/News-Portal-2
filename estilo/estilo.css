@@ -12,7 +12,7 @@ header img {
     padding: 5px 50px;
 }
 
-header div.header-search {
+div.main-search {
     display: flex;
     margin-top: 35px;
     flex-direction: row;
@@ -22,6 +22,7 @@ header div.header-search {
 }
 
 form#nav-main-search {
+    display: flex;
     width: inherit;
     transition: none;
     transform: translateY(0);
@@ -58,4 +59,11 @@ form#nav-main-search {
 
 div.container {
     display: grid;
+}
+
+
+/* Side */
+
+aside {
+    background-color: rgba(5, 0, 0, 0.74);
 }
