@@ -24,10 +24,11 @@ function exibeNoticias() {
             </div>
             </div>            
         `;
-    };
+    }
 
     // Preencher a DIV com o texto HTML
     divTela.innerHTML = texto;
+    console.log(texto);
 }
 
 function executaPesquisa() {
