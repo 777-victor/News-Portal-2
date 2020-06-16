@@ -15,34 +15,69 @@
     <header>
         <img src="img/Logo.png" alt="">
 
-
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-light" id="menu">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active m-5">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 some" id="some">
+
+                    <li class="nav-item m-2">
+                        <a class="nav-link active" href="#">
+                            <font size="5" color="black">Tópicos</font>
+                        </a>
                     </li>
-                    <li class="nav-item m-5">
-                        <a class="nav-link" href="#">Features</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="esportes1">
+                            <font size="4" color="black">Esportes</font>
+                        </a>
                     </li>
-                    <li class="nav-item m-5">
-                        <a class="nav-link" href="#">Pricing</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Tecnologia1">
+                            <font size="4" color="black">Tecnologia</font>
+                        </a>
                     </li>
-                    <li class="nav-item m-5">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="jogos1">
+                            <font size="4" color="black">Jogos</font>
+                        </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="musica1">
+                            <font size="4" color="black">Musicas</font>
+                        </a>
+                    </li>
+
+
+
+
                 </ul>
             </div>
+
         </nav>
+
+        <div class="main-search">
+            <form action="" id="nav-main-search">
+                <button id="btnPesquisa"> <svg focusable="false" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-1search 6 fa-fw">
+           <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path></svg>
+        </button>
+                <input id="txtPesquisa" type="text" class="search-input-field" placeholder="Pesquisar">
+            </form>
+        </div>
+
+
+
 
     </header>
 
     <main>
 
+
         <div class="container-fluid row m-0 p-0">
+            <div id="titulo" class="col-12 text-light bg-dark">
+
+            </div>
             <div class="col-lg-9">
                 <div class="row m-0 p-0" id="tela">
                     <div class="col-lg-12">
@@ -81,39 +116,43 @@
                 </div>
             </div>
 
-            <aside>
-                <div class="col-lg-3 ">
-                    <div class="row">
-                        <nav class="sidebar">
-                            <div class="main-search">
-                                <form action="" id="nav-main-search">
-                                    <button id="btnPesquisa"> <svg focusable="false" viewBox="0 0 512 512" class="svg-inline--fa fa-search fa-w-1search 6 fa-fw">
-                               <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z" class=""></path></svg>
-                            </button>
+            <aside class="col-lg-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="sidebar" id="sidebar">
 
-
-                                    <input id="txtPesquisa" type="text" class="search-input-field" placeholder="Pesquisar">
-                                </form>
-                            </div>
                             <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#">Active</a>
+                                <li class="nav-item m-2">
+                                    <a class="nav-link active" href="#">
+                                        <font size="7" color="white">Tópicos</font>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
+                                    <a class="nav-link active" href="#" id="esportes">
+                                        <font size="6" color="white">Esportes</font>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
+                                    <a class="nav-link" href="#" id="Tecnologia">
+                                        <font size="6" color="white">Tecnologia</font>
+                                    </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                    <a class="nav-link" href="#" id="jogos">
+                                        <font size="6" color="white">Jogos</font>
+                                    </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#" id="musica">
+                                        <font size="6" color="white">Musicas</font>
+                                    </a>
+                                </li>
+
                             </ul>
 
 
-
-                        </nav>
                     </div>
+                    </nav>
                 </div>
             </aside>
         </div>
@@ -142,7 +181,7 @@
 
 
 
-    <script src="script/app.js"></script>
+    <script src="app.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -1,5 +1,9 @@
 /* header */
 
+body {
+    background-color: rgba(0, 0, 0, 0.055);
+}
+
 header {
     background-color: rgba(0, 0, 0, 0.055);
     width: 100%;
@@ -8,17 +12,21 @@ header {
 }
 
 header img {
+    display: flex;
+    flex-wrap: wrap;
     height: 130px;
     padding: 5px 50px;
 }
 
 div.main-search {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 35px;
     flex-direction: row;
     box-sizing: border-box;
     margin-top: 50px;
     margin-right: 30px;
+    justify-content: left;
 }
 
 form#nav-main-search {
@@ -61,27 +69,67 @@ div.container {
     display: grid;
 }
 
+#titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:hover {
+    background-color: rgba(255, 0, 0, 0.5) !important;
+}
+
 
 /* Side */
 
 aside {
-    background-color: rgba(5, 0, 0, 0.74);
+    background-color: #343a40!important;
+    display: flex;
+    align-items: initial;
+    justify-content: center;
 }
 
 @media (max-width: 767.98px) {
-    .sidebar {
+    header {
+        background-color: rgba(0, 0, 0, 0.055);
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+    header img {
+        height: 130px;
+        padding: 5px 50px;
+    }
+    div.main-search {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 35px;
+        flex-direction: row;
+        box-sizing: border-box;
+        margin-top: 50px;
+        margin-right: 30px;
+        justify-content: left;
+    }
+    nav#sidebar {
         display: none;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .sidebar {
+    nav#sidebar {
         display: none;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
-    #some {
+    header nav#menu {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    header nav#menu {
         display: none;
     }
 }
