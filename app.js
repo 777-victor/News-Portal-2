@@ -28,6 +28,21 @@ function exibeNoticias() {
 
     // Preencher a DIV com o texto HTML
     divTela.innerHTML = texto;
+    console.log(texto);
+}
+
+function Homepage() {
+    let query = 'br';
+
+    let xhr = new XMLHttpRequest();
+    xhr.onload = exibeNoticias;
+    xhr.open('GET', `https://newsapi.org/v2/top-headlines?country=${query}&apiKey=${API_KEY}`);
+    xhr.send();
+
+    let divtitulo = document.getElementById('titulo');
+    let textotitulo = `<p><font size="5">Top notícias Brasil</font></p>`;
+    divtitulo.innerHTML = textotitulo;
+
 }
 
 function executaPesquisa() {
@@ -85,9 +100,11 @@ function executaPesquisa5() {
     let textotitulo = `<p><font size="5">Musicas</font></p>`;
     divtitulo.innerHTML = textotitulo;
 }
+window.onload = function() {
+    Homepage();
+};
 
-
-document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
+document.getElementById('btnPesquisa').addEventListener('click', Homepage);
 
 document.getElementById('esportes').addEventListener('click', executaPesquisa2);
 
