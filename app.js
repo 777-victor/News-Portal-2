@@ -84,7 +84,7 @@ function executaPesquisa3() {
 function executaPesquisa4() {
     let xhr = new XMLHttpRequest();
     xhr.onload = exibeNoticias;
-    xhr.open('GET', `http://newsapi.org/v2/everything?q=games&apiKey=${API_KEY}`);
+    xhr.open('GET', `http://newsapi.org/v2/everything?q=jogos&apiKey=${API_KEY}`);
     xhr.send();
     let divtitulo = document.getElementById('titulo');
     let textotitulo = `<p><font size="5">Jogos</font></p>`;
@@ -100,25 +100,27 @@ function executaPesquisa5() {
     let textotitulo = `<p><font size="5">Musicas</font></p>`;
     divtitulo.innerHTML = textotitulo;
 }
+
+
+
 window.onload = function() {
+    document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
+
+    document.getElementById('esportes').addEventListener('click', executaPesquisa2);
+
+    document.getElementById('Tecnologia').addEventListener('click', executaPesquisa3);
+
+    document.getElementById('jogos').addEventListener('click', executaPesquisa4);
+
+    document.getElementById('musica').addEventListener('click', executaPesquisa5);
+
+
+    document.getElementById('esportes1').addEventListener('click', executaPesquisa2);
+
+    document.getElementById('Tecnologia1').addEventListener('click', executaPesquisa3);
+
+    document.getElementById('jogos1').addEventListener('click', executaPesquisa4);
+
+    document.getElementById('musica1').addEventListener('click', executaPesquisa5);
     Homepage();
 };
-
-document.getElementById('btnPesquisa').addEventListener('click', Homepage);
-
-document.getElementById('esportes').addEventListener('click', executaPesquisa2);
-
-document.getElementById('Tecnologia').addEventListener('click', executaPesquisa3);
-
-document.getElementById('jogos').addEventListener('click', executaPesquisa4);
-
-document.getElementById('musica').addEventListener('click', executaPesquisa5);
-
-
-document.getElementById('esportes1').addEventListener('click', executaPesquisa2);
-
-document.getElementById('Tecnologia1').addEventListener('click', executaPesquisa3);
-
-document.getElementById('jogos1').addEventListener('click', executaPesquisa4);
-
-document.getElementById('musica1').addEventListener('click', executaPesquisa5);
