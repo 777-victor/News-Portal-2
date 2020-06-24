@@ -15,14 +15,14 @@ function exibeNoticias() {
             <div class="box-noticia">
                 <img src="${noticia.urlToImage}" alt="">
                 <span class="titulo">${noticia.title}</span><br>
-                <span class="creditos">${data.toLocaleDateString ()} - 
-                    ${noticia.source.name} - 
+                <span class="creditos">${data.toLocaleDateString ()} -
+                    ${noticia.source.name} -
                     ${noticia.author}</span><br>
                 <span class="text">
                 ${noticia.content} <a href="${noticia.url}" target="_blank" >Leia mais ...</a>
                 </span>
             </div>
-            </div>            
+            </div>
         `;
     }
 
@@ -118,32 +118,32 @@ window.onload = function() {
 
 };
 
+var dados = new Array();
+
 function pegaDados() {
 
-    localStorage.setItem('menu', tituloMenu.value);
-    localStorage.setItem('pesquisa', tituloPesquisa.value);
-    console.log({ nome: tituloMenu.value });
+    JSON.parse(dados.push({menu: tituloMenu.value ,pesquisa: tituloPesquisa.value}));
+     localStorage.setItem('data', JSON.stringify(dados));
 
-    var titulo1 = localStorage.getItem('menu');
-    var titulo2 = localStorage.getItem('pesquisa');
-    let divTopicos = document.getElementById('sidebar');
-    let itenNovo = ` 
-    <nav class="sidebar" id="">
-    <ul class="nav flex-column">
-    <li class="nav-item">
-        <a class="nav-link" href="#" id="Menu${id}">
-            <font size="7" color="white">${titulo1}</font>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#" id="pesquisa${id}">
-            <font size="6" color="white">${titulo2}</font>
-        </a>
-    </li>
-    </ul>
-    </nav>`
-    divTopicos.innerHTML = itenNovo;
-    evento.preventDefault();
+
+    // let divTopicos = document.getElementById('sidebar');
+    // let itenNovo = `
+    // <nav class="sidebar" id="">
+    // <ul class="nav flex-column">
+    // <li class="nav-item">
+    //     <a class="nav-link" href="#" id="Menu${id}">
+    //         <font size="7" color="white">${titulo1}</font>
+    //     </a>
+    // </li>
+    // <li class="nav-item">
+    //     <a class="nav-link" href="#" id="pesquisa${id}">
+    //         <font size="6" color="white">${titulo2}</font>
+    //     </a>
+    // </li>
+    // </ul>
+    // </nav>`
+    // divTopicos.innerHTML = itenNovo;
+    // evento.preventDefault();
 
 
 }
