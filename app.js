@@ -28,12 +28,12 @@ function exibeNoticias() {
 
     // Preencher a DIV com o texto HTML
     divTela.innerHTML = texto;
-    console.log(texto);
+
 }
+var query = ' ';
 
 function Homepage() {
-    let query = 'br';
-
+    query = 'br';
     let xhr = new XMLHttpRequest();
     xhr.onload = exibeNoticias;
     xhr.open('GET', `https://newsapi.org/v2/top-headlines?country=${query}&apiKey=${API_KEY}`);
@@ -46,8 +46,6 @@ function Homepage() {
 }
 
 function executaPesquisa() {
-    let query = document.getElementById('txtPesquisa').value;
-
     let xhr = new XMLHttpRequest();
     xhr.onload = exibeNoticias;
     xhr.open('GET', `http://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`);
@@ -56,55 +54,43 @@ function executaPesquisa() {
     let divtitulo = document.getElementById('titulo');
     let textotitulo = `<p><font size="5">${query}</font></p>`;
     divtitulo.innerHTML = textotitulo;
+}
 
+function executaPesquisaa() {
+    query = document.getElementById('txtPesquisa').value;
+    let xhr = new XMLHttpRequest();
+    xhr.onload = exibeNoticias;
+    xhr.open('GET', `http://newsapi.org/v2/everything?q=${query}&apiKey=${API_KEY}`);
+    xhr.send();
+
+    let divtitulo = document.getElementById('titulo');
+    let textotitulo = `<p><font size="5">${query}</font></p>`;
+    divtitulo.innerHTML = textotitulo;
 }
 
 function executaPesquisa2() {
-    let xhr = new XMLHttpRequest();
-    xhr.onload = exibeNoticias;
-    xhr.open('GET', `http://newsapi.org/v2/everything?q=esportes&apiKey=${API_KEY}`);
-    xhr.send();
-    let divtitulo = document.getElementById('titulo');
-    let textotitulo = `<p><font size="5">Esportes</font></p>`;
-    divtitulo.innerHTML = textotitulo;
-
+    query = "Esportes";
+    executaPesquisa();
 }
 
 function executaPesquisa3() {
-    let xhr = new XMLHttpRequest();
-    xhr.onload = exibeNoticias;
-    xhr.open('GET', `http://newsapi.org/v2/everything?q=tecnologia&apiKey=${API_KEY}`);
-    xhr.send();
-    let divtitulo = document.getElementById('titulo');
-    let textotitulo = `<p><font size="5">Tecnologia</font></p>`;
-    divtitulo.innerHTML = textotitulo;
-
+    query = "Tecnologia";
+    executaPesquisa();
 }
 
 function executaPesquisa4() {
-    let xhr = new XMLHttpRequest();
-    xhr.onload = exibeNoticias;
-    xhr.open('GET', `http://newsapi.org/v2/everything?q=jogos&apiKey=${API_KEY}`);
-    xhr.send();
-    let divtitulo = document.getElementById('titulo');
-    let textotitulo = `<p><font size="5">Jogos</font></p>`;
-    divtitulo.innerHTML = textotitulo;
+    query = "Jogos";
+    executaPesquisa();
 }
 
 function executaPesquisa5() {
-    let xhr = new XMLHttpRequest();
-    xhr.onload = exibeNoticias;
-    xhr.open('GET', `http://newsapi.org/v2/everything?q=musica&apiKey=${API_KEY}`);
-    xhr.send();
-    let divtitulo = document.getElementById('titulo');
-    let textotitulo = `<p><font size="5">Musicas</font></p>`;
-    divtitulo.innerHTML = textotitulo;
+    query = "Musicas";
+    executaPesquisa();
+
 }
 
-
-
 window.onload = function() {
-    document.getElementById('btnPesquisa').addEventListener('click', executaPesquisa);
+    document.getElementById('btnPesquisa').addEventListener('click', executaPesquisaa);
 
     document.getElementById('esportes').addEventListener('click', executaPesquisa2);
 
@@ -114,7 +100,6 @@ window.onload = function() {
 
     document.getElementById('musica').addEventListener('click', executaPesquisa5);
 
-
     document.getElementById('esportes1').addEventListener('click', executaPesquisa2);
 
     document.getElementById('Tecnologia1').addEventListener('click', executaPesquisa3);
@@ -122,5 +107,43 @@ window.onload = function() {
     document.getElementById('jogos1').addEventListener('click', executaPesquisa4);
 
     document.getElementById('musica1').addEventListener('click', executaPesquisa5);
+
+    // document.getElementById('salvar').addEventListener('click', );
     Homepage();
+
+    document.getElementById('salvaMenu').addEventListener('click', pegaDados);
+
+
+
+
 };
+
+function pegaDados() {
+
+    localStorage.setItem('menu', tituloMenu.value);
+    localStorage.setItem('pesquisa', tituloPesquisa.value);
+    console.log({ nome: tituloMenu.value });
+
+    var titulo1 = localStorage.getItem('menu');
+    var titulo2 = localStorage.getItem('pesquisa');
+    let divTopicos = document.getElementById('sidebar');
+    let itenNovo = ` 
+    <nav class="sidebar" id="">
+    <ul class="nav flex-column">
+    <li class="nav-item">
+        <a class="nav-link" href="#" id="Menu${id}">
+            <font size="7" color="white">${titulo1}</font>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#" id="pesquisa${id}">
+            <font size="6" color="white">${titulo2}</font>
+        </a>
+    </li>
+    </ul>
+    </nav>`
+    divTopicos.innerHTML = itenNovo;
+    evento.preventDefault();
+
+
+}
