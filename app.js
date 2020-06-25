@@ -111,39 +111,51 @@ window.onload = function() {
     // document.getElementById('salvar').addEventListener('click', );
     Homepage();
 
-    document.getElementById('salvaMenu').addEventListener('click', pegaDados);
+    document.getElementById('salvaMenu').addEventListener('click', pegaDados, mostraDados);
 
 
+    // console.log(JSON.parse(localStorage.getItem('data')));
+
+    console.log(localStorage.data);
 
 
 };
 
-var dados = new Array();
+var dados = [];
+if (localStorage.getItem('data') != null) dados = JSON.parse(localStorage.getItem('data'));
 
 function pegaDados() {
+    JSON.parse(dados.push({ menu: tituloMenu.value, pesquisa: tituloPesquisa.value }));
+    localStorage.setItem('data', JSON.stringify(dados));
+    mostraDados();
 
-    JSON.parse(dados.push({menu: tituloMenu.value ,pesquisa: tituloPesquisa.value}));
-     localStorage.setItem('data', JSON.stringify(dados));
+}
 
+var teste = localStorage.getItem('data');
 
-    // let divTopicos = document.getElementById('sidebar');
-    // let itenNovo = `
-    // <nav class="sidebar" id="">
-    // <ul class="nav flex-column">
-    // <li class="nav-item">
-    //     <a class="nav-link" href="#" id="Menu${id}">
-    //         <font size="7" color="white">${titulo1}</font>
-    //     </a>
-    // </li>
-    // <li class="nav-item">
-    //     <a class="nav-link" href="#" id="pesquisa${id}">
-    //         <font size="6" color="white">${titulo2}</font>
-    //     </a>
-    // </li>
-    // </ul>
-    // </nav>`
-    // divTopicos.innerHTML = itenNovo;
-    // evento.preventDefault();
+function mostraDados() {
 
 
+    let divTopicos = document.getElementById('sidebar');
+
+    let itenNovo = '';
+    for (i = 0; i < localStorage.length; i++) {
+        itenNovo = itenNovo + `
+   
+    <nav class="sidebar" id="">
+    <ul class="nav flex-column">
+     <li class="nav-item">
+         <a class="nav-link" href="#" id="menu${i}">
+             <font size="7" color="white">${JSON.parse(teste)[i].menu}</font>
+         </a>
+     </li>
+     <li class="nav-item">
+         <a class="nav-link" onclick="query = JSON.parse(teste)[${i}].pesquisa; executaPesquisa();" href="#" id="pesquisa${i}">
+             <font size="6" color="white">${JSON.parse(teste)[i].pesquisa}</font>
+         </a>
+     </li>
+     </ul>
+     </nav>`
+        divTopicos.innerHTML = itenNovo;
+    }
 }
