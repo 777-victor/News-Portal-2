@@ -92,6 +92,11 @@
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
     salvar
   </button>
+                        <a href="javascript:location.reload(true)"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Atualizar</button>
+                        </a>
+                        <button type="button" class="btn btn-secondary" href="javascript:location.reload(true)" data-dismiss="modal" id="exibir">Exibir</button>
+
+
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -101,7 +106,7 @@
                                         <h5 class="modal-title" id="exampleModalLabel">
                                             <font size="6" color="black">Salvar pesquisa</font>
                                         </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <button type="button" href="javascript:location.reload(true)" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
                                     </div>
@@ -117,8 +122,8 @@
                                         <input type="text" name="tituloPesquisa" id="tituloPesquisa">
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-success" id="salvaMenu">Save changes</button>
+                                        <button type="button" class="btn btn-secondary" href="javascript:location.reload(true)" data-dismiss="modal" id="fechar">Fechar</button>
+                                        <button type="submit" class="btn btn-success" id="salvaMenu">Salvar</button>
                                     </div>
                                 </div>
                             </div>

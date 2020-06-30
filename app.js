@@ -110,8 +110,11 @@ window.onload = function() {
 
     // document.getElementById('salvar').addEventListener('click', );
     Homepage();
+    // mostraDados();
 
-    document.getElementById('salvaMenu').addEventListener('click', pegaDados, mostraDados);
+    document.getElementById('salvaMenu').addEventListener('click', pegaDados);
+
+    document.getElementById('exibir').addEventListener('click', mostraDados);
 
 
     // console.log(JSON.parse(localStorage.getItem('data')));
@@ -127,14 +130,12 @@ if (localStorage.getItem('data') != null) dados = JSON.parse(localStorage.getIte
 function pegaDados() {
     JSON.parse(dados.push({ menu: tituloMenu.value, pesquisa: tituloPesquisa.value }));
     localStorage.setItem('data', JSON.stringify(dados));
-    mostraDados();
 
 }
 
 var teste = localStorage.getItem('data');
 
 function mostraDados() {
-
 
     let divTopicos = document.getElementById('sidebar');
 
@@ -157,5 +158,6 @@ function mostraDados() {
      </ul>
      </nav>`
         divTopicos.innerHTML = itenNovo;
+
     }
 }
